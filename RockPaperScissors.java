@@ -10,9 +10,6 @@ public class RockPaperScissors{
 		int decision = 3;
 		int score = 0;
 		
-		//boolean paperBeatsRock = (decision == 0 && choice == 1) || (decision == 1 && choice && 0);
-
-		
 		for(int i = 0; i <3;){
 			System.out.print("You: ");
 			String player = scanner.next();
