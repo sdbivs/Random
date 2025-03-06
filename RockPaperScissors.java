@@ -33,7 +33,7 @@ public class RockPaperScissors{
 			break;
 			default:
 				System.out.println("Not a valid response!");
-				i = 3;
+				continue;
 			}
 		
 			if(decision == choice){
