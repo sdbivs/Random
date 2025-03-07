@@ -1,27 +1,33 @@
 import java.util.Scanner;
-import java.util.Random;
 public class NumberGuessingGame{
 	public static void main(String[] args){
 		Scanner scanner = new Scanner(System.in);
-		Random random = new Random();
 		
-		int number = random.nextInt(5);
+		int randomNumber = (int)(Math.random() * 101);
+		boolean won = false;
 		
-		System.out.println("Welcome to the Number Guessing Game!\nYou have 5 guesses to try and find the number between 1 and 10\nEnter your first guess:");
-		int guess = scanner.nextInt();
+		System.out.println("\nGuess a number between 0 and 100. \nYou have 10 Guesses\n");
 		
-		for(int i = 0; i <= 5; i++){
-			if(guess < number){
-				System.out.println("Higher");
-			}else if(guess > number){
-				System.out.println("Lower");
-			}else if(guess == number){
-				System.out.println("Congratulations you won!!!");
-				i = 6;
+		for(int i = 0; i < 10;){
+			int guess = scanner.nextInt();
+			if(guess == randomNumber){
+				i = 10;
+				won = true;
+			}else if(guess < randomNumber){
+				System.out.println("Higher!");
+				i++;
+			}else if(guess > randomNumber){
+				System.out.println("Lower!");
+				i++;
+			}else{
+				System.out.println("Input invalid! Try again.");
 			}
 		}
 		
-		
-		
+		if(won){
+			System.out.println("Congratulations you WON!!! The number was: " + randomNumber + ".");
+		}else{
+			System.out.println("You LOST!!! The number is: " + randomNumber + ".");
+		}
 	}
 }
