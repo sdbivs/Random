@@ -6,57 +6,51 @@ public class RockPaperScissors{
 		System.out.println("\nWelcome to Rock, Paper, Scissors!\nCan you beat me in a Best Of Three?\n");
 		System.out.println("Throw \"Rock\", \"Paper\", or \"Scissors\" to start!");
 		
-		String[] RockPaperScissors = {"Rock", "Paper", "Scissors"};
-		int decision = 3;
+		String[] ProgramChoice = {"Rock", "Paper", "Scissors"};
 		int score = 0;
 		
 		for(int i = 0; i <3;){
 			System.out.print("You: ");
-			String player = scanner.next();
-			int choice = (int)(Math.random() * 3);
+			String player = scanner.next().toLowerCase();
+			int playerChoice;
+			int program = (int)(Math.random() * 3);
 			
 			switch(player){
-			case "Rock":
 			case "rock":
-			case "ROCK":
-				decision = 0;
+				playerChoice = 0;
 			break;
-			case "Paper":
 			case "paper":
-			case "PAPER":
-				decision = 1;
+				playerChoice = 1;
 			break;
-			case "Scissors":
 			case "scissors":
-			case "SCISSORS":
-				decision = 2;
+				playerChoice = 2;
 			break;
 			default:
 				System.out.println("Not a valid response!");
-				continue;
+			continue;
 			}
 		
-			if(decision == choice){
-				System.out.println("Opponent: " + RockPaperScissors[choice]);
-				System.out.println(player + " ties " + RockPaperScissors[choice]);
-			}else if(decision == 2 && choice == 1){
-				System.out.println("Opponent: " + RockPaperScissors[choice]);
-				System.out.println(player + " beats " + RockPaperScissors[choice]);
+			if(playerChoice == program){
+				System.out.println("Opponent: " + ProgramChoice[program]);
+				System.out.println(player + " ties " + ProgramChoice[program]);
+			}else if(playerChoice == 2 && program == 1){
+				System.out.println("Opponent: " + ProgramChoice[program]);
+				System.out.println(player + " beats " + ProgramChoice[program]);
 				score++;
 				i++;
-			}else if(decision == 1 && choice == 0){
-				System.out.println("Opponent: " + RockPaperScissors[choice]);
-				System.out.println(player + " beats " + RockPaperScissors[choice]);
+			}else if(playerChoice == 1 && program == 0){
+				System.out.println("Opponent: " + ProgramChoice[program]);
+				System.out.println(player + " beats " + ProgramChoice[program]);
 				score++;
 				i++;
-			}else if(decision == 0 && choice == 2){
-				System.out.println("Opponent: " + RockPaperScissors[choice]);
-				System.out.println(player + " beats " + RockPaperScissors[choice]);
+			}else if(playerChoice == 0 && program == 2){
+				System.out.println("Opponent: " + ProgramChoice[program]);
+				System.out.println(player + " beats " + ProgramChoice[program]);
 				score++;
 				i++;
 			}else{
-				System.out.println("Opponent: " + RockPaperScissors[choice]);
-				System.out.println(RockPaperScissors[choice] + " beats " + player);
+				System.out.println("Opponent: " + ProgramChoice[program]);
+				System.out.println(ProgramChoice[program] + " beats " + player);
 				i++;
 			}
 		}
