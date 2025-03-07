@@ -6,7 +6,7 @@ public class NumberGuessingGame{
 		int randomNumber = (int)(Math.random() * 101);
 		boolean won = false;
 		
-		System.out.println("\nGuess a number between 0 and 100. \nYou have 10 Guesses\n");
+		System.out.println("\nGuess a number between 0 and 100. \nYou have 10 Guesses!\n");
 		
 		for(int i = 0; i < 10;){
 			int guess = scanner.nextInt();
